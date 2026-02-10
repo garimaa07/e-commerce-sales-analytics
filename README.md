@@ -47,6 +47,9 @@ The analysis is based on a relational schema including:
 ```text
 ecommerce-sql-powerbi-analytics/
 │
+├── e-commerce_delivery_project
+|
+|
 ├── dataset/
 │   └── sample_data.sql
 │
