@@ -71,7 +71,60 @@ CREATE TABLE ab_test (
     variant VARCHAR(10) -- A (control), B (test)
 );
 
--- 4. SAMPLE DATA INSERTION
+-- 4. SAMPLE DATA 
+
+-- EVENTS TABLE (User Behavior Simulation)
+INSERT INTO events (customer_id, event_type, event_time, product_id) VALUES
+
+-- Customer 1 (converted)
+(1, 'visit', '2024-06-01 10:00:00', NULL),
+(1, 'view_product', '2024-06-01 10:02:00', 1),
+(1, 'add_to_cart', '2024-06-01 10:05:00', 1),
+(1, 'purchase', '2024-06-01 10:10:00', 1),
+
+-- Customer 2 (drops at cart)
+(2, 'visit', '2024-06-02 11:00:00', NULL),
+(2, 'view_product', '2024-06-02 11:05:00', 3),
+(2, 'add_to_cart', '2024-06-02 11:08:00', 3),
+
+-- Customer 3 (drops at view)
+(3, 'visit', '2024-06-03 09:00:00', NULL),
+(3, 'view_product', '2024-06-03 09:03:00', 2),
+
+-- Customer 4 (converted)
+(4, 'visit', '2024-06-04 14:00:00', NULL),
+(4, 'view_product', '2024-06-04 14:04:00', 6),
+(4, 'add_to_cart', '2024-06-04 14:06:00', 6),
+(4, 'purchase', '2024-06-04 14:12:00', 6),
+
+-- Customer 5 (drops at visit)
+(5, 'visit', '2024-06-05 12:00:00', NULL),
+
+-- Customer 6 (converted)
+(6, 'visit', '2024-06-06 16:00:00', NULL),
+(6, 'view_product', '2024-06-06 16:03:00', 8),
+(6, 'add_to_cart', '2024-06-06 16:05:00', 8),
+(6, 'purchase', '2024-06-06 16:10:00', 8),
+
+-- Customer 7 (drops at cart)
+(7, 'visit', '2024-06-07 18:00:00', NULL),
+(7, 'view_product', '2024-06-07 18:04:00', 5),
+(7, 'add_to_cart', '2024-06-07 18:06:00', 5),
+
+-- Customer 8 (converted)
+(8, 'visit', '2024-06-08 20:00:00', NULL),
+(8, 'view_product', '2024-06-08 20:03:00', 7),
+(8, 'add_to_cart', '2024-06-08 20:06:00', 7),
+(8, 'purchase', '2024-06-08 20:10:00', 7),
+
+-- New customers (for more realism)
+(9, 'visit', '2024-06-09 10:00:00', NULL),
+(9, 'view_product', '2024-06-09 10:05:00', 9),
+
+(10, 'visit', '2024-06-10 11:00:00', NULL),
+(10, 'view_product', '2024-06-10 11:02:00', 10),
+(10, 'add_to_cart', '2024-06-10 11:05:00', 10),
+(10, 'purchase', '2024-06-10 11:10:00', 10);
 
 -- 5. BUSINESS METRICS
 
